@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=ORCLCDB.localdomain)))
+    username: SANDBOX_DEV
+    password: dev
+
+  liquibase:
+    change-log: classpath:liquibase-changeLog.xml
