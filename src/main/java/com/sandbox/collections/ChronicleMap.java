@@ -1,4 +1,4 @@
-package com.sandbox.Collections;
+package com.sandbox.collections;
 
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Component;
