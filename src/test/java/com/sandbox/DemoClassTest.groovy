@@ -1,6 +1,7 @@
 package com.sandbox
 
 import spock.lang.Specification
+import spock.lang.Unroll
 
 class DemoClassTest extends Specification {
 
@@ -10,7 +11,7 @@ class DemoClassTest extends Specification {
         demoClass = new DemoClass({ cardId -> "##" + cardId + "##" })
     }
 
-    def "Should calculate hash properly"() {
+    def "Should calculate hash properly variant 1"() {
         when:
             def hashedResult = demoClass.hash(cardId)
         then:
@@ -24,4 +25,17 @@ class DemoClassTest extends Specification {
                     "00000", "12345", "0000011111"
             ]
     }
+
+    @Unroll
+    def "Should calculate hash properly variant 2 where cardId: #cardId"() {
+        expect:
+        hashedResult == demoClass.hash(cardId)
+
+        where:
+        hashedResult     | cardId
+        "##00000##"      | "00000"
+        "##12345##"      | "12345"
+        "##0000011111##" | "0000011111"
+    }
+
 }

@@ -7,5 +7,10 @@ spring:
   liquibase:
     change-log: classpath:liquibase-changeLog.xml
 
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+
 service-config:
   value: default

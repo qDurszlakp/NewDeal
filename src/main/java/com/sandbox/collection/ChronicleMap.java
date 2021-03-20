@@ -1,4 +1,4 @@
-package com.sandbox.collections;
+package com.sandbox.collection;
 
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Component;
@@ -22,7 +22,7 @@ public class ChronicleMap {
 //        persistedCountryMap.put("Poland", "poland");
 //        persistedCountryMap.put("Germany", "germany");
 //        persistedCountryMap.put("Usa", "usa");
-
+//
 //        persistedCountryMap.forEach((k, v) -> {
 //            System.out.println(k + "  " + v);
 //        });
