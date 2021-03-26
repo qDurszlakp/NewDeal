@@ -1,4 +1,4 @@
-package com.sandbox.db.entity;
+package com.sandbox.api.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
