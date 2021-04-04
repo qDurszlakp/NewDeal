@@ -2,6 +2,7 @@ package com.sandbox.api.controller;
 
 import com.sandbox.api.model.base.BaseResponse;
 import com.sandbox.api.model.base.Result;
+import com.sandbox.api.model.base.ResultInfo;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -11,9 +12,14 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class ErrorHandlerControllerAdvice {
 
     @ExceptionHandler
-    private ResponseEntity<BaseResponse> genericError(Exception exception) {
-        BaseResponse result = new BaseResponse();
-        result.setResult(Result.of("-21", "Generic exception."));
-        return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
+    private ResponseEntity<BaseResponse> genericError(Exception e) {
+        BaseResponse response = new BaseResponse();
+
+        Result r = Result.of("-21", "Generic exception.")
+                         .addInfo(ResultInfo.of("Exception", "-2", e.getMessage()));
+
+        response.setResult(r);
+
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 }

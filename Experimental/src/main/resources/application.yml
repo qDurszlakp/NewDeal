@@ -1,2 +1,12 @@
 service-config:
   value: default
+
+spring:
+  security:
+    user:
+      name: test
+      password: test
+
+logging:
+  level:
+    root: INFO
