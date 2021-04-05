@@ -47,3 +47,17 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
+
+## React ###
+
+/App/node_modules/
+/App/public/bundles/
+/App/build/
+/App/src/dist/
+/App/coverage/
+.reactful.json
+yarn-error.log
+.env
+.vscode/
+.DS_Store
+
