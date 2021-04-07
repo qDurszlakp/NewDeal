@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 public class Country {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "COUNTRY_ID")
     private Long id;
 

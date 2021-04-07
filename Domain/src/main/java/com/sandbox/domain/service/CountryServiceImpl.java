@@ -1,5 +1,6 @@
 package com.sandbox.domain.service;
 
+import com.sandbox.domain.model.DomainCountry;
 import com.sandbox.domain.model.DomainGetCountriesResponse;
 import com.sandbox.domain.repository.CountryRepository;
 
@@ -23,5 +24,10 @@ public class CountryServiceImpl implements CountryService {
         }
 
         throw new RuntimeException("No country records available.");
+    }
+
+    @Override
+    public void addCountry(DomainCountry domainCountry) {
+        countryRepository.save(domainCountry);
     }
 }

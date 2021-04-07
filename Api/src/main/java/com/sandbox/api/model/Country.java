@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Getter
@@ -11,8 +12,12 @@ import java.time.LocalDateTime;
 @ToString
 public class Country {
 
+    @NotNull
     private String name;
+
+    @NotNull
     private String code;
+
     private LocalDateTime insertTime;
 
 }

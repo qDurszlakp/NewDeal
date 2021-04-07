@@ -35,4 +35,10 @@ public class CountryRepositoryImpl implements CountryRepository {
 
         return Optional.of(result);
     }
+
+    @Override
+    public void save(DomainCountry domainCountry) {
+        Country country = infrastructureCountryMapper.map(domainCountry);
+        countryJpaRepository.save(country);
+    }
 }

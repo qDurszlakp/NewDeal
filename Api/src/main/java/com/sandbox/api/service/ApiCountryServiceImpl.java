@@ -1,8 +1,11 @@
 package com.sandbox.api.service;
 
+import com.sandbox.api.common.CommonResultsManager;
 import com.sandbox.api.mapper.ApiCountryMapper;
+import com.sandbox.api.model.Country;
 import com.sandbox.api.model.GetCountriesResponse;
 import com.sandbox.api.model.base.Result;
+import com.sandbox.domain.model.DomainCountry;
 import com.sandbox.domain.model.DomainGetCountriesResponse;
 import com.sandbox.domain.service.CountryService;
 import lombok.RequiredArgsConstructor;
@@ -21,8 +24,14 @@ public class ApiCountryServiceImpl implements ApiCountryService {
         DomainGetCountriesResponse countries = countryService.getAllCountries();
 
         GetCountriesResponse mappedCountries = apiCountryMapper.map(countries);
-        mappedCountries.setResult(Result.of(Result.SUCCESS_CODE, "OK"));
+        mappedCountries.setResult(CommonResultsManager.SUCCESS);
 
         return mappedCountries;
+    }
+
+    @Override
+    public void addCountry(Country country) {
+        DomainCountry domainCountry = apiCountryMapper.map(country);
+        countryService.addCountry(domainCountry);
     }
 }

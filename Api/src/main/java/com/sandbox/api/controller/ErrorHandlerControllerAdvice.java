@@ -1,5 +1,6 @@
 package com.sandbox.api.controller;
 
+import com.sandbox.api.common.CommonResultsManager;
 import com.sandbox.api.model.base.BaseResponse;
 import com.sandbox.api.model.base.Result;
 import com.sandbox.api.model.base.ResultInfo;
@@ -15,7 +16,7 @@ public class ErrorHandlerControllerAdvice {
     private ResponseEntity<BaseResponse> genericError(Exception e) {
         BaseResponse response = new BaseResponse();
 
-        Result r = Result.of("-21", "Generic exception.")
+        Result r = Result.of(CommonResultsManager.GENERIC_ERROR)
                          .addInfo(ResultInfo.of("Exception", "-2", e.getMessage()));
 
         response.setResult(r);

@@ -11,4 +11,5 @@ public interface InfrastructureCountryMapper {
 
     List<DomainCountry> map(List<Country> country);
 
+    Country map(DomainCountry domainCountry);
 }
