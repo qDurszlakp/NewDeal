@@ -28,4 +28,8 @@ public class Country {
     @Column(name = "INS_TIME")
     private LocalDateTime insertTime;
 
+    @Version
+    @Column(name = "VERSION")
+    private Integer version;
+
 }

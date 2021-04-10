@@ -10,4 +10,6 @@ public interface CountryRepository {
     Optional<DomainGetCountriesResponse> getAllCountries();
 
     void save(DomainCountry domainCountry);
+
+    void update(DomainCountry domainCountry);
 }

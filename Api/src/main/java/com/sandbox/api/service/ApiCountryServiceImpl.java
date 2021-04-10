@@ -34,4 +34,10 @@ public class ApiCountryServiceImpl implements ApiCountryService {
         DomainCountry domainCountry = apiCountryMapper.map(country);
         countryService.addCountry(domainCountry);
     }
+
+    @Override
+    public void editCountry(Country country) {
+        DomainCountry domainCountry = apiCountryMapper.map(country);
+        countryService.editCountry(domainCountry);
+    }
 }

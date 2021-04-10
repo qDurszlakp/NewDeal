@@ -4,6 +4,7 @@ import com.sandbox.domain.model.DomainCountry;
 import com.sandbox.domain.model.DomainGetCountriesResponse;
 import com.sandbox.domain.repository.CountryRepository;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 public class CountryServiceImpl implements CountryService {
@@ -29,5 +30,15 @@ public class CountryServiceImpl implements CountryService {
     @Override
     public void addCountry(DomainCountry domainCountry) {
         countryRepository.save(domainCountry);
+    }
+
+    @Override
+    public void editCountry(DomainCountry domainCountry) {
+
+        if (domainCountry.getInsertTime() == null) {
+            domainCountry.setInsertTime(LocalDateTime.now());
+        }
+
+        countryRepository.update(domainCountry);
     }
 }

@@ -8,4 +8,6 @@ public interface CountryService {
     DomainGetCountriesResponse getAllCountries();
 
     void addCountry(DomainCountry domainCountry);
+
+    void editCountry(DomainCountry domainCountry);
 }

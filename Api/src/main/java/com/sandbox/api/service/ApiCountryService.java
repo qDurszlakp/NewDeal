@@ -8,4 +8,6 @@ public interface ApiCountryService {
     GetCountriesResponse getAllCountries();
 
     void addCountry(Country country);
+
+    void editCountry(Country country);
 }

@@ -41,4 +41,20 @@ public class CountryRepositoryImpl implements CountryRepository {
         Country country = infrastructureCountryMapper.map(domainCountry);
         countryJpaRepository.save(country);
     }
+
+    @Override
+    public void update(DomainCountry domainCountry) {
+
+        Optional<Country> countryByCode = countryJpaRepository.findCountryByCode(domainCountry.getCode());
+
+        if (!countryByCode.isPresent()) {
+            throw new RuntimeException(String.format("No country with code %s, available.", domainCountry.getCode()));
+        }
+
+        Country country = countryByCode.get();
+        country.setInsertTime(domainCountry.getInsertTime());
+        country.setName(domainCountry.getName());
+
+        countryJpaRepository.save(country);
+    }
 }
