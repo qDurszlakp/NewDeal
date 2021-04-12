@@ -4,11 +4,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-public class Config {
+public class InfrastructureConfig {
 
     @Configuration
     @PropertySource(value = "classpath:application-infrastructure.properties")
-    static class DefaultConfig {
+    static class DefaultInfrastructureConfig {
     }
 
 }

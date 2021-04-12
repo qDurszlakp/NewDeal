@@ -2,7 +2,7 @@ package com.sandbox.api.common;
 
 import com.sandbox.api.model.base.Result;
 
-public class CommonResultsManager {
+public final class CommonResultsManager {
 
     public static final Result SUCCESS = of(Result.SUCCESS_CODE, "OK");
     public static final Result GENERIC_ERROR = of("-1", "Generic error.");

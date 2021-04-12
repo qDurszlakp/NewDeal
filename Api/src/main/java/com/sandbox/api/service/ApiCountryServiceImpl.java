@@ -4,7 +4,6 @@ import com.sandbox.api.common.CommonResultsManager;
 import com.sandbox.api.mapper.ApiCountryMapper;
 import com.sandbox.api.model.Country;
 import com.sandbox.api.model.GetCountriesResponse;
-import com.sandbox.api.model.base.Result;
 import com.sandbox.domain.model.DomainCountry;
 import com.sandbox.domain.model.DomainGetCountriesResponse;
 import com.sandbox.domain.service.CountryService;

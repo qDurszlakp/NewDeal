@@ -7,6 +7,7 @@ import com.sandbox.infrastructure.entity.Country;
 import com.sandbox.infrastructure.mapper.InfrastructureCountryMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.util.List;
@@ -15,6 +16,8 @@ import java.util.Optional;
 @Repository
 @RequiredArgsConstructor
 public class CountryRepositoryImpl implements CountryRepository {
+
+    private final Integer INITIAL_VERSION_VALUE = 1;
 
     private final CountryJpaRepository countryJpaRepository;
     private final InfrastructureCountryMapper infrastructureCountryMapper;
@@ -39,10 +42,12 @@ public class CountryRepositoryImpl implements CountryRepository {
     @Override
     public void save(DomainCountry domainCountry) {
         Country country = infrastructureCountryMapper.map(domainCountry);
+        country.setVersion(INITIAL_VERSION_VALUE);
         countryJpaRepository.save(country);
     }
 
     @Override
+    @Transactional
     public void update(DomainCountry domainCountry) {
 
         Optional<Country> countryByCode = countryJpaRepository.findCountryByCode(domainCountry.getCode());
