@@ -1,13 +1,12 @@
 package com.sandbox.domain.repository;
 
 import com.sandbox.domain.model.DomainCountry;
-import com.sandbox.domain.model.DomainGetCountriesResponse;
 
-import java.util.Optional;
+import java.util.List;
 
 public interface CountryRepository {
 
-    Optional<DomainGetCountriesResponse> getAllCountries();
+    List<DomainCountry> getCountries();
 
     void save(DomainCountry domainCountry);
 

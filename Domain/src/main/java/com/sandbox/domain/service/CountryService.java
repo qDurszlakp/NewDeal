@@ -1,11 +1,12 @@
 package com.sandbox.domain.service;
 
 import com.sandbox.domain.model.DomainCountry;
-import com.sandbox.domain.model.DomainGetCountriesResponse;
+
+import java.util.List;
 
 public interface CountryService {
 
-    DomainGetCountriesResponse getAllCountries();
+    List<DomainCountry> getCountries();
 
     void addCountry(DomainCountry domainCountry);
 

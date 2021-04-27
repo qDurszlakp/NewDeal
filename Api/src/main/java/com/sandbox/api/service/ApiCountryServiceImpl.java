@@ -5,10 +5,12 @@ import com.sandbox.api.mapper.ApiCountryMapper;
 import com.sandbox.api.model.Country;
 import com.sandbox.api.model.GetCountriesResponse;
 import com.sandbox.domain.model.DomainCountry;
-import com.sandbox.domain.model.DomainGetCountriesResponse;
 import com.sandbox.domain.service.CountryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -18,14 +20,20 @@ public class ApiCountryServiceImpl implements ApiCountryService {
     private final CountryService countryService;
 
     @Override
-    public GetCountriesResponse getAllCountries() {
+    public GetCountriesResponse getCountries() {
 
-        DomainGetCountriesResponse countries = countryService.getAllCountries();
+        List<DomainCountry> domainCountries = countryService.getCountries();
 
-        GetCountriesResponse mappedCountries = apiCountryMapper.map(countries);
-        mappedCountries.setResult(CommonResultsManager.SUCCESS);
 
-        return mappedCountries;
+        List<Country> apiCountries = domainCountries.stream()
+                .map(apiCountryMapper::map)
+                .collect(Collectors.toList());
+
+        GetCountriesResponse result = new GetCountriesResponse();
+        result.setCountries(apiCountries);
+        result.setResult(CommonResultsManager.SUCCESS);
+
+        return result;
     }
 
     @Override

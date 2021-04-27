@@ -17,9 +17,9 @@ public class CountryController {
 
     private final ApiCountryService apiCountryService;
 
-    @GetMapping("/getAllCountries")
-    public ResponseEntity<GetCountriesResponse> getAllCountries() {
-        GetCountriesResponse apiResponse = apiCountryService.getAllCountries();
+    @GetMapping("/getCountries")
+    public ResponseEntity<GetCountriesResponse> getCountries() {
+        GetCountriesResponse apiResponse = apiCountryService.getCountries();
         return ResponseEntity.ok(apiResponse);
     }
 

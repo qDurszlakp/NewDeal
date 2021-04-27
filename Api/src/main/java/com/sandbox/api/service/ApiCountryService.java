@@ -5,7 +5,7 @@ import com.sandbox.api.model.GetCountriesResponse;
 
 public interface ApiCountryService {
 
-    GetCountriesResponse getAllCountries();
+    GetCountriesResponse getCountries();
 
     void addCountry(Country country);
 

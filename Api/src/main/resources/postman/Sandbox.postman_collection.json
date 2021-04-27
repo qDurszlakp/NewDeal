@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "6b083e1c-5dc7-4229-9696-9d62dd251260",
+		"name": "Sandbox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "/getCountries",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWNoZ2Vla25leHQiLCJleHAiOjE2MTcyNTQ0OTQsImlhdCI6MTYxNzIzNjQ5NH0.gTFCpudI6AhE74xF4sS4jpEH6JiRN5H-8GeEh7NWwCqaFjH0Ohw6DmGob6stqeJ3uO4eGN1vc5tQySrDzukqPA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"techgeeknext\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/getCountries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getCountries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/addCountry",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"13\",\r\n    \"name\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/addCountry",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"addCountry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/editCountry",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n    \"code\": \"13\",\r\n    \"name\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/editCountry",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"editCountry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getCards",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWNoZ2Vla25leHQiLCJleHAiOjE2MTcyNTQ0OTQsImlhdCI6MTYxNzIzNjQ5NH0.gTFCpudI6AhE74xF4sS4jpEH6JiRN5H-8GeEh7NWwCqaFjH0Ohw6DmGob6stqeJ3uO4eGN1vc5tQySrDzukqPA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"techgeeknext\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/getCards",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getCards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getAccounts",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWNoZ2Vla25leHQiLCJleHAiOjE2MTcyNTQ0OTQsImlhdCI6MTYxNzIzNjQ5NH0.gTFCpudI6AhE74xF4sS4jpEH6JiRN5H-8GeEh7NWwCqaFjH0Ohw6DmGob6stqeJ3uO4eGN1vc5tQySrDzukqPA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"techgeeknext\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/getAccounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getAccounts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EXPERIMENTAL",
+			"item": [
+				{
+					"name": "/hello",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/hello",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hello"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

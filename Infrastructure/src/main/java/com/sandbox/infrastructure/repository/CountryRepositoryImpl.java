@@ -1,17 +1,16 @@
 package com.sandbox.infrastructure.repository;
 
 import com.sandbox.domain.model.DomainCountry;
-import com.sandbox.domain.model.DomainGetCountriesResponse;
 import com.sandbox.domain.repository.CountryRepository;
 import com.sandbox.infrastructure.entity.Country;
 import com.sandbox.infrastructure.mapper.InfrastructureCountryMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Repository
 @RequiredArgsConstructor
@@ -23,20 +22,13 @@ public class CountryRepositoryImpl implements CountryRepository {
     private final InfrastructureCountryMapper infrastructureCountryMapper;
 
     @Override
-    public Optional<DomainGetCountriesResponse> getAllCountries() {
+    public List<DomainCountry> getCountries() {
 
         List<Country> countries = countryJpaRepository.findAll();
 
-        if (CollectionUtils.isEmpty(countries)) {
-            return Optional.empty();
-        }
-
-        List<DomainCountry> mappedCountries = infrastructureCountryMapper.map(countries);
-
-        DomainGetCountriesResponse result = new DomainGetCountriesResponse();
-        result.setCountries(mappedCountries);
-
-        return Optional.of(result);
+        return countries.stream()
+                .map(infrastructureCountryMapper::map)
+                .collect(Collectors.toList());
     }
 
     @Override

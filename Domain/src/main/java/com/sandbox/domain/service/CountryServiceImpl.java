@@ -1,12 +1,11 @@
 package com.sandbox.domain.service;
 
 import com.sandbox.domain.model.DomainCountry;
-import com.sandbox.domain.model.DomainGetCountriesResponse;
 import com.sandbox.domain.repository.CountryRepository;
 import org.springframework.cache.annotation.Cacheable;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
+import java.util.List;
 
 public class CountryServiceImpl implements CountryService {
 
@@ -18,15 +17,8 @@ public class CountryServiceImpl implements CountryService {
 
     @Override
     @Cacheable("countries")
-    public DomainGetCountriesResponse getAllCountries() {
-
-        Optional<DomainGetCountriesResponse> countries = countryRepository.getAllCountries();
-
-        if (countries.isPresent()) {
-            return countries.get();
-        }
-
-        throw new RuntimeException("No country records available.");
+    public List<DomainCountry> getCountries() {
+        return countryRepository.getCountries();
     }
 
     @Override
