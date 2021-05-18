@@ -2,7 +2,6 @@ package com.sandbox.domain.service;
 
 import com.sandbox.domain.model.DomainCountry;
 import com.sandbox.domain.repository.CountryRepository;
-import org.springframework.cache.annotation.Cacheable;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -16,7 +15,6 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Override
-    @Cacheable("countries")
     public List<DomainCountry> getCountries() {
         return countryRepository.getCountries();
     }

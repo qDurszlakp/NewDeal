@@ -5,6 +5,7 @@ import com.sandbox.domain.repository.CardRepository;
 import com.sandbox.infrastructure.entity.Card;
 import com.sandbox.infrastructure.mapper.InfrastructureCardMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,6 +19,7 @@ public class CardRepositoryImpl implements CardRepository {
     private final InfrastructureCardMapper infrastructureCardMapper;
 
     @Override
+    @Cacheable("cards")
     public List<DomainCard> getCards() {
 
         List<Card> cards = cardJpaRepository.findAll();
