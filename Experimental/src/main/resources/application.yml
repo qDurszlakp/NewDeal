@@ -1,3 +1,6 @@
+server:
+  port: 8090
+
 service-config:
   value: default
 

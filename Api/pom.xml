@@ -73,6 +73,20 @@
             <version>${swagger.version}</version>
         </dependency>
 
+        <!-- TESTS -->
+
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+        </dependency>
+
+        <!-- INTERNAL -->
+
         <dependency>
             <groupId>com.sandbox</groupId>
             <artifactId>Domain</artifactId>
@@ -84,18 +98,6 @@
             <artifactId>Infrastructure</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>runtime</scope>
-        </dependency>
-
-        <!-- TESTS -->
-
-        <dependency>
-            <groupId>org.spockframework</groupId>
-            <artifactId>spock-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-all</artifactId>
         </dependency>
 
     </dependencies>
