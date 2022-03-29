@@ -8,6 +8,8 @@ import org.springframework.context.annotation.PropertySource;
 @EnableCaching
 public class InfrastructureConfig {
 
+    private InfrastructureConfig() { }
+
     @Configuration
     @PropertySource(value = "classpath:application-infrastructure.properties")
     static class DefaultInfrastructureConfig {
