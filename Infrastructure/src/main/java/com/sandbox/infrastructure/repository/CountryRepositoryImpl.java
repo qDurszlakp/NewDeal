@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.Clock;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -16,8 +18,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class CountryRepositoryImpl implements CountryRepository {
 
-    private final Integer INITIAL_VERSION_VALUE = 1;
-
+    private final Clock clock;
     private final CountryJpaRepository countryJpaRepository;
     private final InfrastructureCountryMapper infrastructureCountryMapper;
 
@@ -34,7 +35,7 @@ public class CountryRepositoryImpl implements CountryRepository {
     @Override
     public void save(DomainCountry domainCountry) {
         Country country = infrastructureCountryMapper.map(domainCountry);
-        country.setVersion(INITIAL_VERSION_VALUE);
+        country.setInsertTime(LocalDateTime.now(clock));
         countryJpaRepository.save(country);
     }
 

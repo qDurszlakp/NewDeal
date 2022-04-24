@@ -12,7 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableConfigurationProperties({ServiceFeatures.class})
 public class App implements CommandLineRunner {
 
-    public static void main(String[] args) {
+    public static void  main(String[] args) {
         SpringApplication.run(App.class, args);
     }
 

@@ -24,7 +24,6 @@ public class ApiCountryServiceImpl implements ApiCountryService {
 
         List<DomainCountry> domainCountries = countryService.getCountries();
 
-
         List<Country> apiCountries = domainCountries.stream()
                 .map(apiCountryMapper::map)
                 .collect(Collectors.toList());
