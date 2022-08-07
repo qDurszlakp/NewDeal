@@ -19,7 +19,5 @@ public class App implements CommandLineRunner {
 
     @Override
     @SneakyThrows
-    public void run(String... args) {
-
-    }
+    public void run(String... args) {}
 }

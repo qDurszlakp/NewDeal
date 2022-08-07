@@ -10,6 +10,10 @@ spring:
       name: test
       password: test
 
+collections:
+  chronicle:
+    path: /Desktop/country-details.dat
+
 logging:
   level:
     root: INFO
