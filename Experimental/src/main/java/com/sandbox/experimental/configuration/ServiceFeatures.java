@@ -8,5 +8,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class ServiceFeatures {
 
     private String value;
+    private int startupDelaySeconds;
 
 }
