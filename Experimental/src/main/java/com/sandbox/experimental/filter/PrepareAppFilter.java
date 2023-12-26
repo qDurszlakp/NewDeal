@@ -33,7 +33,7 @@ public class PrepareAppFilter implements Filter {
 
     private void sleep() throws InterruptedException {
         log.info("Preparing App ...");
-        Thread.sleep(serviceFeatures.getStartupDelaySeconds() * 1_000L);
+        //Thread.sleep(serviceFeatures.getStartupDelaySeconds() * 1_000L);
         log.info("App started !!!");
     }
 }
